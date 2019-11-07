@@ -8,6 +8,7 @@ namespace TestGitHub
         {
             Console.WriteLine("Cześć");
             Console.WriteLine("This is a new extra line");
+            Console.WriteLine("This is a line added on GitHub");
         }
     }
 }
