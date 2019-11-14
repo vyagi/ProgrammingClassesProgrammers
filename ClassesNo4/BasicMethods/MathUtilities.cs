@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Math
+namespace Maths
 {
     public static class MathUtilities
     {
@@ -32,6 +32,31 @@ namespace Math
         public static bool AreCoprime(int a, int b)
         {
             return Gcd(a, b) == 1;
+        }
+
+        public static double[] SolveQuadratic(int a, int b, int c)
+        {
+            if (a == 0)
+                throw new ArgumentException("a cannot be zero");
+
+            int delta = b * b - 4 * a * c;
+
+            if (delta > 0)
+            {
+                double x1 = (-b - Math.Sqrt(delta)) / (2 * a);
+                double x2 = (-b + Math.Sqrt(delta)) / (2 * a);
+                //double[] result = new double[2];
+                //result[0] = x1;
+                //result[1] = x2;
+                //return result;
+                return new[] { x1, x2 };
+            }
+            if (delta == 0)
+            {
+                double x1 = -b / (2 * a);
+                return new[] { x1 };
+            }
+            return new double[0];
         }
     }
 }
