@@ -6,10 +6,12 @@ namespace BasicClasses
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person("Janusz", "Wolny", -40);
-            
+            Person p1 = new Person("Janusz", "Wolny", 40);
+            Person p2 = new Person("Ann", "Shirley", 20);
+            p2.SetLastName("Grape");
             
             Console.WriteLine($"{p1.GetFirstName()} {p1.GetLastName()} is {p1.GetAge()}");
+            Console.WriteLine($"{p2.GetFirstName()} {p2.GetLastName()} is {p2.GetAge()}");
         }
     }
     class Person
@@ -38,6 +40,12 @@ namespace BasicClasses
         public int GetAge()
         {
             return this.age;
+        }
+        public void SetLastName(string newLastName)
+        {
+            if(newLastName == null)
+                throw new ArgumentNullException("Name cannot be null");
+            this.lastName = newLastName;
         }
     }
 }
