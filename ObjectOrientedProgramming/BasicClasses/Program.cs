@@ -8,10 +8,10 @@ namespace BasicClasses
         {
             Person p1 = new Person("Janusz", "Wolny", 40);
             Person p2 = new Person("Ann", "Shirley", 20);
-            p2.SetLastName("Grape");
+            p2.LastName = "Grape";
             
-            Console.WriteLine($"{p1.GetFirstName()} {p1.GetLastName()} is {p1.GetAge()}");
-            Console.WriteLine($"{p2.GetFirstName()} {p2.GetLastName()} is {p2.GetAge()}");
+            Console.WriteLine($"{p1.FirstName} {p1.LastName} is {p1.Age}");
+            Console.WriteLine($"{p2.FirstName} {p2.LastName} is {p2.Age}");
         }
     }
     class Person
@@ -19,6 +19,34 @@ namespace BasicClasses
         private string firstName;
         private string lastName;
         private int age;
+
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException("Name cannot be null");
+                lastName = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+        }
         public Person(string firstName, string lastName, int age)
         {
             if (firstName == null || lastName == null)
@@ -28,24 +56,6 @@ namespace BasicClasses
             if (age <= 0)
                 throw new ArgumentOutOfRangeException("Age must be postive");
             this.age = age;
-        }
-        public string GetFirstName()
-        {
-            return this.firstName;
-        }
-        public string GetLastName()
-        {
-            return this.lastName;
-        }
-        public int GetAge()
-        {
-            return this.age;
-        }
-        public void SetLastName(string newLastName)
-        {
-            if(newLastName == null)
-                throw new ArgumentNullException("Name cannot be null");
-            this.lastName = newLastName;
         }
     }
 }
