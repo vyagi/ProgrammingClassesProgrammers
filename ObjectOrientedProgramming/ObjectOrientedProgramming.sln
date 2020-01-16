@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedClasses", "Advanced
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{99435E3D-D72B-4B98-B483-36FC75845C7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{145A4697-EA1F-43E6-A2C5-78F284951476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{7C802820-6583-468A-9339-11DE1C81D17A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{99435E3D-D72B-4B98-B483-36FC75845C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99435E3D-D72B-4B98-B483-36FC75845C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99435E3D-D72B-4B98-B483-36FC75845C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145A4697-EA1F-43E6-A2C5-78F284951476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145A4697-EA1F-43E6-A2C5-78F284951476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145A4697-EA1F-43E6-A2C5-78F284951476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145A4697-EA1F-43E6-A2C5-78F284951476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C802820-6583-468A-9339-11DE1C81D17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C802820-6583-468A-9339-11DE1C81D17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C802820-6583-468A-9339-11DE1C81D17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C802820-6583-468A-9339-11DE1C81D17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

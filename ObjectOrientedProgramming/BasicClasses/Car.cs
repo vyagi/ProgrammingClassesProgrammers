@@ -2,6 +2,8 @@
 {
     public class Car
     {
+        private static int CarsCreated;        
+        
         private double _fuelLevel;
         private double _kilometersCounter;
         private double _tripKilometersCounter;
@@ -14,6 +16,8 @@
 
         public Car(string brand, int tankCapacity, int fuelConsumptionPer100Km)
         {
+            CarsCreated++;
+
             Brand = brand;
             TankCapacity = tankCapacity;
             FuelConsumptionPer100Km = fuelConsumptionPer100Km;
@@ -47,5 +51,10 @@
         }
 
         public void ResetTripCounter() => _tripKilometersCounter = 0;
+
+        public static int HowManyCarWasCreated()
+        {
+            return CarsCreated;
+        }
     }
 }

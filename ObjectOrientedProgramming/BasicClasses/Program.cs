@@ -13,6 +13,8 @@ namespace BasicClasses
             Console.WriteLine($"{p1.FirstName} {p1.LastName} is {p1.Age}");
             Console.WriteLine($"{p2.FirstName} {p2.LastName} is {p2.Age}");
 
+            Console.WriteLine(Car.HowManyCarWasCreated());
+            
             Car c1 = new Car("Toyota", 70,5);
             c1.Tank(20);
             c1.Drive(300);
@@ -20,6 +22,10 @@ namespace BasicClasses
             c1.Drive(300);
             Console.WriteLine($"{c1.CurrentFuelLevel} liters of fuel left. {c1.KilometerCounter} kilometers done.");
 
+            Console.WriteLine(Car.HowManyCarWasCreated());
+          
+
         }
+
     }
 }
