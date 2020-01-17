@@ -13,8 +13,7 @@ namespace InvoiceApplication
             InitializeComponent();
             statusLabel.Text = "Press Read file to read a file";
         }
-
-        private void readButton_Click(object sender, EventArgs e)
+        private void byNameButton_Click(object sender, EventArgs e)
         {
             resultListBox.Items.Clear();
             
@@ -48,6 +47,39 @@ namespace InvoiceApplication
         {
             resultListBox.Items.Clear();
             statusLabel.Text = "Clearing done";
+        }
+
+        private void byMonthsButton_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+
+            var content = File.ReadAllLines(_path);
+            var values = new Dictionary<string, decimal>();
+
+            foreach (var invoiceLine in content)
+            {
+                var split = invoiceLine.Split('\t');
+                DateTime date = DateTime.Parse(split[1]);
+                var month = date.Month;
+                var year = date.Year;
+                var yearAndMonth = $"{year}-{month}";
+
+                decimal amount = Convert.ToDecimal(split[2]);
+
+                if (values.ContainsKey(yearAndMonth))
+                {
+                    values[yearAndMonth] += amount;
+                }
+                else
+                {
+                    values[yearAndMonth] = amount;
+                }
+            }
+            foreach (var item in values)
+            {
+                resultListBox.Items.Add($"{item.Key}\t{item.Value}");
+            }
+            statusLabel.Text = "File processed";
         }
     }
 }
