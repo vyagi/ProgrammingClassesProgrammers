@@ -36,5 +36,9 @@ namespace Geometry
         {
             return Math.Sqrt(_x * _x + _y * _y);
         }
+        public override string ToString()
+        {
+            return $"({_x},{_y})";
+        }
     }
 }
